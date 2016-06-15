@@ -7,10 +7,17 @@ import (
 
 const (
 	SrvAddr         = "224.0.0.1:46789"
-	MaxDatagramSize = 8192
+	MaxDatagramSize = 2048
 )
 
 type Client struct {
-	Host *net.UDPAddr 	`json:"host"`
-	LastPing time.Time	`json:"lastPing"`
+	Host *net.UDPAddr
+	LastPing time.Time
+	Payload *Payload
 }
+
+type Payload struct {
+	OS string	`json:"os"`
+	ARCH string `json:"arch"`
+}
+
