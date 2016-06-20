@@ -24,7 +24,6 @@ func main() {
 
 
 func msgHandler(src *net.UDPAddr, n int, b []byte) {
-	
 	payload := lib.Payload{}
 	err := json.Unmarshal(b[:n], &payload)
 	
